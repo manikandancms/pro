@@ -10,7 +10,7 @@ const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [cartOpen, setCartOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
-  const [cartPosition, setCartPosition] = useState({ x: -100, y: 0 });
+  const [cartPosition, setCartPosition] = useState({ x: 0, y: 0 });
   const [isDragging, setIsDragging] = useState(false);
   const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 });
   const [darkMode, setDarkMode] = useState(() => {
@@ -18,6 +18,7 @@ const Header = () => {
     const saved = localStorage.getItem('darkMode');
     return saved ? JSON.parse(saved) : false;
   });
+  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 768);
   
   const toggleMenu = () => setMenuOpen(prev => !prev);
   const toggleCart = () => setCartOpen(prev => !prev);
@@ -77,6 +78,7 @@ const Header = () => {
 
   // Drag functionality for cart dropdown
   const handleMouseDown = (e) => {
+    if (isSmallScreen) return; // Disable drag on small screens
     if (e.target.closest('.cart-content')) return; // Don't drag when clicking on cart content
     setIsDragging(true);
     const rect = cartDropdownRef.current.getBoundingClientRect();
@@ -87,6 +89,7 @@ const Header = () => {
   };
 
   const handleMouseMove = (e) => {
+    if (isSmallScreen) return; // Disable drag on small screens
     if (!isDragging) return;
     
     const newX = e.clientX - dragOffset.x;
@@ -111,6 +114,29 @@ const Header = () => {
     };
   }, [isDragging, dragOffset]);
 
+  // Set initial cart position when cart opens on large screens
+  useEffect(() => {
+    if (cartOpen && !isSmallScreen && cartRef.current) {
+      const rect = cartRef.current.getBoundingClientRect();
+      setCartPosition({
+        x: rect.left - 160, // Center the cart dropdown (320px width / 2 = 160px offset)
+        y: rect.bottom + 10  // Position below the cart button
+      });
+    }
+  }, [cartOpen, isSmallScreen]);
+
+  useEffect(() => {
+    if (isDragging) {
+      document.addEventListener('mousemove', handleMouseMove);
+      document.addEventListener('mouseup', handleMouseUp);
+    }
+
+    return () => {
+      document.removeEventListener('mousemove', handleMouseMove);
+      document.removeEventListener('mouseup', handleMouseUp);
+    };
+  }, [isDragging, dragOffset]);
+
   useEffect(() => {
     // Simulate loading time
     const timer = setTimeout(() => {
@@ -118,6 +144,12 @@ const Header = () => {
     }, 1000);
 
     return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    const handleResize = () => setIsSmallScreen(window.innerWidth < 768);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   // Apply dark mode to document element
@@ -298,24 +330,28 @@ const Header = () => {
               {cartOpen && (
                 <div 
                   ref={cartDropdownRef}
-                  className={`fixed w-80 rounded-lg shadow-xl z-[9999] max-h-96 overflow-y-auto cursor-move ${
+                  className={`${isSmallScreen ? 'absolute top-full left-0 mt-2' : 'fixed'} w-80 rounded-lg shadow-xl z-[9999] max-h-96 overflow-y-auto ${!isSmallScreen ? 'cursor-move' : ''} ${
                     darkMode 
                       ? 'bg-gray-800 text-white' 
                       : 'bg-white text-gray-800'
                   }`}
                   style={{ 
-                    left: cartPosition.x, 
-                    top: cartPosition.y,
-                    transform: isDragging ? 'scale(1.02)' : 'scale(1)',
-                    transition: isDragging ? 'none' : 'all 0.2s ease-in-out'
+                    ...(isSmallScreen ? {} : {
+                      left: cartPosition.x, 
+                      top: cartPosition.y,
+                      transform: isDragging ? 'scale(1.02)' : 'scale(1)',
+                      transition: isDragging ? 'none' : 'all 0.2s ease-in-out'
+                    })
                   }}
-                  onMouseDown={handleMouseDown}
+                  onMouseDown={!isSmallScreen ? handleMouseDown : undefined}
                 >
                   {/* Drag Handle */}
-                  <div className={`px-4 py-2 rounded-t-lg cursor-move flex justify-between items-center ${
+                  <div className={`px-4 py-2 rounded-t-lg flex justify-between items-center ${!isSmallScreen ? 'cursor-move' : ''} ${
                     darkMode ? 'bg-gray-700 text-white' : 'bg-blue-500 text-white'
                   }`}>
-                    <span className="text-sm font-medium">🖱️ Drag to move cart</span>
+                    {!isSmallScreen && (
+                      <span className="text-sm font-medium">🖱️ Drag to move cart</span>
+                    )}
                     <button
                       onClick={() => setCartOpen(false)}
                       className="text-white hover:text-gray-200 text-xl font-bold"
