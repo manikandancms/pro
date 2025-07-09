@@ -91,13 +91,13 @@ const HeroSection = () => {
                         <section className={`h-full w-full flex items-center justify-center p-8 ${card.bgColor} relative`}>
                             {/* Left Side - Text Only */}
                             <div className="flex-1 text-left max-w-md z-10 pr-8">
-                                <h2 className={`text-4xl font-bold ${card.textColor} mb-4 drop-shadow-lg`}>
+                                <h2 className={`text-sm md:text-5xl font-bold ${card.textColor} mb-4 drop-shadow-lg`}>
                                     {card.title}
                                 </h2>
-                                <p className="text-2xl font-semibold text-yellow-300 mb-4 drop-shadow-lg">
+                                <p className="text-xs md:text-2xl font-semibold text-yellow-300 mb-4 drop-shadow-lg">
                                     {card.subtitle}
                                 </p>
-                                <p className={`text-lg ${card.textColor} mb-6 drop-shadow-lg opacity-90`}>
+                                <p className={`text-xs md:text-xl ${card.textColor} mb-6 drop-shadow-lg opacity-90`}>
                                     {card.description}
                                 </p>
                             </div>
