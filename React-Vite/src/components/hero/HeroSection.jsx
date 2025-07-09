@@ -7,8 +7,8 @@ const HeroSection = () => {
     const [currentCardIndex, setCurrentCardIndex] = useState(0);
     const intervalRef = useRef(null);
 
-    const transitionDuration = 400;   // 0.5s for transition
-    const displayDuration = 2000;     // 2s display time for each card
+    const transitionDuration = 50;   // 0.5s for transition
+    const displayDuration = 1500;     // 2s display time for each card
     const totalCycle = displayDuration + transitionDuration;
 
     const heroCards = [
@@ -72,7 +72,7 @@ const HeroSection = () => {
     if (isLoading) return <ShimmerLayout />;
 
     return (
-        <div className="relative overflow-hidden mt-[calc(3.5rem+20px)] h-[calc(70vh+20px)] w-[95%] mx-auto rounded-lg">
+        <div className="relative overflow-hidden mt-[calc(3.5rem+20px)] h-[calc(30vh+20px)] md:h-[calc(70vh+20px)] w-[95%] mx-auto rounded-lg">
             {/* Carousel Container */}
             <div
                 className="flex h-full"
@@ -107,7 +107,7 @@ const HeroSection = () => {
                                 <div className="relative">
                                     <div className="absolute inset-0 bg-white/20 rounded-full blur-2xl"></div>
                                     <img
-                                        className="relative w-80 h-80 object-cover rounded-2xl drop-shadow-2xl border-4 border-white/60"
+                                        className="relative w-35 h-35 md:w-80 md:h-80 object-cover rounded-lg drop-shadow-lg"
                                         src={card.image}
                                         alt={`${card.title.toLowerCase()} illustration`}
                                         onError={(e) => {

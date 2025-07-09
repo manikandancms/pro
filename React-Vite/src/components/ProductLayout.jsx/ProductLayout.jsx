@@ -212,11 +212,9 @@ const vegetableData = [
 const groceryData = [
   {
     id: "g1",
-    images:
-      ["https://ik.imagekit.io/mani2/image/juicy-dates-wooden-plate-wooden-table-high-quality-photo.jpg?updatedAt=1748756658770",
-        "https://ik.imagekit.io/mani2/image/to.png?updatedAt=1750792105142",
-        "https://ik.imagekit.io/mani2/image/tomato-isolated1232.png?updatedAt=1750792151319"],
-
+    image:
+      "https://ik.imagekit.io/mani2/image/juicy-dates-wooden-plate-wooden-table-high-quality-photo.jpg?updatedAt=1748756658770",
+  
     title: "Date palme",
     price: "$35",
     rating: "4.8",
