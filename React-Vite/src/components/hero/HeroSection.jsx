@@ -107,7 +107,7 @@ const HeroSection = () => {
                                 <div className="relative">
                                     <div className="absolute inset-0 bg-white/20 rounded-full blur-2xl"></div>
                                     <img
-                                        className="relative w-35 h-35 md:w-80 md:h-80 object-cover rounded-lg drop-shadow-lg"
+                                        className="relative w-32 h-28 md:w-80 md:h-80 object-cover rounded-lg drop-shadow-lg"
                                         src={card.image}
                                         alt={`${card.title.toLowerCase()} illustration`}
                                         onError={(e) => {
