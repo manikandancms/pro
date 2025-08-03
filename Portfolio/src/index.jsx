@@ -7,6 +7,7 @@ import Footer from "./Footer/Footer.jsx";
 import ContactMe from "./Contact/Contact.jsx";
 import ProjectsPage from "./Project/Project.jsx";
 import About from "./About/About";
+import Form from "./Form/Form.jsx";
 
 
 
@@ -18,6 +19,7 @@ const Home = () => (
     <HeroSection />
     <ProjectsPage />
     <BodySection />
+    <Form/>
  
 
 

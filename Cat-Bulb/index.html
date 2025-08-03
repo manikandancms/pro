@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Cat Bulb</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-black min-h-screen flex items-center justify-center">
+    <div class="container mx-auto h-full p-6">
+        <div class="w-full max-w-lg mx-auto flex flex-col justify-center items-center h-full space-y-10">
+            <!-- Images -->
+            <div class="flex flex-row justify-center items-center gap-8">
+                <img src="https://ik.imagekit.io/jap5d6wbb/image/cat&Bulb/cat-img.png?updatedAt=1742731564088"
+                     alt="bulb-image"
+                     id="bulb1"
+                     class="h-32 md:h-48 object-contain" />
+                <img src="https://ik.imagekit.io/jap5d6wbb/image/cat&Bulb/bulb-go-on-img.png?updatedAt=1742731612880"
+                     alt="Cat-image"
+                     id="cat1"
+                     class="h-32 md:h-48 object-contain" />
+            </div>
+
+            <!-- Text and buttons -->
+            <div>
+                <p id="parag"
+                   class="text-white px-10 text-center font-semibold text-lg bg-transparent mb-5">
+                   Switch Off
+                </p>
+                <div class="flex flex-row justify-center items-center gap-8">
+                    <button id="On"
+                            class="bg-green-600 hover:bg-green-700 text-white rounded-lg px-10 py-4 font-semibold text-lg transition-colors duration-300">
+                        On
+                    </button>
+                    <button id="Off"
+                            class="bg-red-600 hover:bg-red-700 text-white rounded-lg px-10 py-4 font-semibold text-lg transition-colors duration-300">
+                        Off
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const bulbimage = document.getElementById("bulb1");
+        const catimage = document.getElementById("cat1");
+        const paragElement = document.getElementById("parag");
+        const buttonOnElement = document.getElementById("On");
+        const buttonOffElement = document.getElementById("Off");
+
+        buttonOffElement.addEventListener("click", () => {
+            bulbimage.src = "https://ik.imagekit.io/jap5d6wbb/image/cat&Bulb/cat-eyes-img.png?updatedAt=1742731591723";
+            catimage.src = "https://ik.imagekit.io/jap5d6wbb/image/cat&Bulb/bulb-go-off-img.png?updatedAt=1742731644689";
+            paragElement.textContent = "Switch ON";
+        });
+
+        buttonOnElement.addEventListener("click", () => {
+            bulbimage.src = "https://ik.imagekit.io/jap5d6wbb/image/cat&Bulb/cat-img.png?updatedAt=1742731564088";
+            catimage.src = "https://ik.imagekit.io/jap5d6wbb/image/cat&Bulb/bulb-go-on-img.png?updatedAt=1742731612880";
+            paragElement.textContent = "Switch OFF";
+        });
+    </script>
+</body>
+
+</html>

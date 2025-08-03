@@ -17,12 +17,12 @@ const HeroSection = () => {
             Full Stack Developer
           </h2>
           <div className="w-full flex justify-center lg:justify-center mt-4">
-            <Link
-              to="/contact"
+            <a
+              href="https://drive.google.com/drive/folders/1fsb6J9-m45sqBtHQGfQZDSqBWZsP6Yze"
               className="bg-green-600 hover:bg-green-800 text-white font-semibold py-2 px-6 rounded border border-gray-800 transition-transform transform hover:scale-105"
             >
               Resume
-            </Link>
+            </a>
           </div>
         </div>
 

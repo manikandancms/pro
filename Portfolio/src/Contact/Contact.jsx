@@ -19,14 +19,11 @@ const ContactMe = () => {
     resumeFileName,
   } = contactInfo;
 
-  // Extract the username/ID from Linkedin and Github URLs for display
-  // (Optional: You can adjust how you want to display these)
   const linkedinId = linkedin.split("linkedin.com/in/")[1] || linkedin;
   const githubId = github.split("github.com/")[1] || github;
 
   return (
     <div className="font-sans max-w-3xl mx-auto p-4">
-
       {/* Contact Info Section */}
       <section
         id="contact"
@@ -70,15 +67,7 @@ const ContactMe = () => {
             </a>
           </li>
         </ul>
-        <div className="text-center">
-          <a
-            href={resumeUrl}
-            download
-            className="bg-cyan-400 text-gray-900 px-8 py-3 rounded-md font-semibold inline-block hover:bg-cyan-500 transition"
-          >
-            Download Resume
-          </a>
-        </div>
+        {/* Removed the "Download Resume" button here */}
       </section>
 
       {/* Gmail-style Resume Preview Section */}
@@ -87,9 +76,9 @@ const ContactMe = () => {
         <div className="border-b border-gray-300 p-4 bg-gray-100">
           <span className="font-medium">To: recruiter@example.com</span>
           <div className="text-gray-600 text-sm">
-            From: Your Name &lt;{email}&gt;
+            From: &lt;{email}&gt;
           </div>
-          <div className="font-medium mt-2">Resume for Your Consideration</div>
+          <div className="font-medium mt-2">Resume for Your Consideration..</div>
         </div>
 
         {/* Message */}
@@ -97,13 +86,13 @@ const ContactMe = () => {
           <p className="mb-5 leading-relaxed text-gray-800 whitespace-pre-line">
             Dear Recruiter,
 
-            {"\n\n"}Please find my resume attached for your review.
+            {"\n\n"}I attached my resume link here for your review.
 
             {"\n\n"}Thank you for your consideration.
 
             {"\n\n"}Regards,
 
-            {"\n"}Your Name
+            {"\n"}C.Manikandan.
           </p>
         </div>
 
@@ -119,7 +108,7 @@ const ContactMe = () => {
             <div className="text-xs text-gray-600">PDF • 1 page</div>
           </div>
           <a
-            href={resumeUrl}
+            href={"https://drive.google.com/drive/folders/1fsb6J9-m45sqBtHQGfQZDSqBWZsP6Yze"}
             target="_blank"
             rel="noopener noreferrer"
             className="bg-blue-600 text-white px-3 py-1 rounded-md font-medium text-sm mr-2 hover:bg-blue-700 transition"
@@ -129,7 +118,7 @@ const ContactMe = () => {
           <a
             href={resumeUrl}
             download
-            className="text-blue-600 px-3 py-1 font-medium text-sm hover:underline"
+            className="text-blue-700 px-3 py-1 font-medium text-sm hover:underline"
           >
             Download
           </a>
