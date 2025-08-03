@@ -29,7 +29,7 @@ const HeroSection = () => {
         {/* Image near text with reduced margin on large screens */}
         <div className="flex-1 flex justify-center lg:justify-start lg:ml-4">
           <img
-            src="https://ik.imagekit.io/jap5d6wbb/image/bgmani@2x.jpg?updatedAt=1753636313470"
+            src="https://ik.imagekit.io/jap5d6wbb/image/new%20edited1111.jpg?updatedAt=1754238385309"
             alt="Profile illustration"
             className="w-36 h-36 sm:w-44 sm:h-44 md:w-52 md:h-52 lg:w-60 lg:h-60 rounded-xl border-4 object-cover border-gray-600 shadow-lg"
           />

@@ -7,12 +7,12 @@ const projects = [
     link: "https://pro-e-com.netlify.app/"
   },
   {
-    title: "Portfolio Website",
-    link: "https://your-portfolio-site.com"
+    title: "Counter",
+    link: "https://submission-he3z.vercel.app/"
   },
   {
-    title: "Finance Dashboard",
-    link: "https://your-finance-app-demo.com"
+    title: "Cat & Bulb",
+    link: "https://pro-theta-khaki.vercel.app/"
   }
 ];
 
