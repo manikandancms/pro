@@ -115,13 +115,7 @@ const ContactMe = () => {
           >
             Preview
           </a>
-          <a
-            href={resumeUrl}
-            download
-            className="text-blue-700 px-3 py-1 font-medium text-sm hover:underline"
-          >
-            Download
-          </a>
+         
         </div>
       </section>
     </div>
