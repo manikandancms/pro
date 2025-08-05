@@ -28,7 +28,7 @@ const ProjectsPage = () => (
           <div key={idx} className="bg-gray-800 rounded-xl p-6 shadow flex flex-col items-start justify-between">
             <h3 className="text-xl font-semibold mb-3 text-white">{proj.title}</h3>
             <a
-              className="mt-2 inline-block rounded bg-pink-600 hover:bg-pink-700 text-white font-semibold px-5 py-2 transition"
+              className="mt-2 inline-block rounded bg-orange-500 hover:bg-yellow-700 text-white font-semibold px-5 py-2 transition"
               href={proj.link}
               target="_blank"
               rel="noopener noreferrer"

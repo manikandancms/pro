@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const HeroSection = () => {
   return (
     <section className=" 2xl:container mx-auto flex flex-col justify-center items-center px-4 sm:px-6 py-6 text-white bg-white mt-16">
-      <div className=" w-[95%] mx-auto flex flex-col-reverse lg:flex-row items-center  max-w-6xl  space-y-6 lg:space-y-0 lg:space-x-96">
+      <div className=" w-[95%] mx-auto flex flex-col-reverse lg:flex-row items-center  max-w-6xl  space-y-6 lg:space-y-0 lg:space-x-20">
         {/* Text content */}
         <div className="flex-1 flex flex-col items-center text-center lg:items-center lg:text-center space-y-5 px-10">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-700 leading-tight">
