@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import ShimmerLayout from "../shimmer/Shimmer";
-; // Adjust path as needed
+import ShimmerLayout from "../shimmer/Shimmer"; // Adjust path as needed
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -19,7 +18,7 @@ const Header = () => {
   }
 
   return (
-    <header className="2xl:container mx-auto bg-gray-800 text-white p-4 z-50 shadow-md">
+    <header className="2xl:container mx-auto bg-gray-800 text-white p-4 z-50 shadow-md fixed top-0 left-0 right-0">
       <div className="w-[90%] mx-auto flex items-center justify-between">
         {/* Logo / Brand */}
         <div className="text-2xl font-semibold">Portfolio application</div>
@@ -38,7 +37,6 @@ const Header = () => {
           >
             Contact
           </Link>
-       
           <Link
             to="/about"
             className="hover:underline hover:text-gray-400 transition-colors duration-200"
@@ -81,7 +79,10 @@ const Header = () => {
 
       {/* Mobile navigation menu */}
       {menuOpen && (
-        <nav className="absolute top-full left-0 w-full bg-gray-800 flex flex-col items-center space-y-4 py-4 md:hidden shadow-lg">
+        <nav
+          className="fixed top-[56px] left-0 w-full bg-gray-800 flex flex-col items-center space-y-4 py-4 md:hidden shadow-lg z-50 mb-20"
+          style={{ maxHeight: "calc(100vh - 56px)", overflowY: "auto" }}
+        >
           <Link
             to="/"
             className="hover:underline hover:text-green-400 transition-colors duration-200"
@@ -96,9 +97,6 @@ const Header = () => {
           >
             Contact
           </Link>
-         
-
-
           <Link
             to="/about"
             className="hover:underline hover:text-green-400 transition-colors duration-200"

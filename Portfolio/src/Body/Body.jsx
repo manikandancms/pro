@@ -49,8 +49,8 @@ const education = [
 const skills = [
   "MERN Stack: MongoDB, Express.js, React, Node.js",
   "JavaScript, HTML, CSS, Tailwind CSS",
-  "Adobe Photoshop CC 2019, Adobe Premiere Pro, CorelDRAW",
-  "Unreal Engine 5, Audodesk Maya"
+  "Adobe Photoshop, CorelDRAW",
+  "Unreal Engine 5, Audodesk Maya, Adobe Premier"
 ];
 
 // --- COMPONENT ---

@@ -29,7 +29,7 @@ const ContactMe = () => {
       {/* Contact Info Section */}
       <section
         id="contact"
-        className=" w-[90%] mx-auto bg-gray-900 text-gray-100 p-8 rounded-xl shadow-lg mb-8"
+        className=" w-[90%] mx-auto bg-gray-900 text-gray-100 p-8 rounded-xl shadow-lg mt-16"
       >
         <h2 className="text-center text-3xl mb-6 font-semibold">Contact Me</h2>
         <ul className="list-none p-0 mb-8 text-lg space-y-4">
