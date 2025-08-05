@@ -17,7 +17,7 @@ const animationVariants = {
 const About = () => {
   return (
     <motion.section
-      className="max-w-3xl mx-auto p-6 shadow-lg mt-10 mb-10 rounded"
+      className="max-w-3xl mx-auto p-10 shadow-lg mt-10 rounded"
       variants={animationVariants}
       initial="hidden"
       animate="visible"

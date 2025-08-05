@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className="2xl:container  mx-auto bg-[#151515] text-[#efefef] py-8 text-center">
+    <div className="2xl:container  mx-auto bg-[#151515] text-[#efefef] py-10 text-center">
       <div className="w-[90%] mx-auto ">
        
         <div className=" mb-1">
