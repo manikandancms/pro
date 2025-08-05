@@ -49,13 +49,14 @@ const education = [
 const skills = [
   "MERN Stack: MongoDB, Express.js, React, Node.js",
   "JavaScript, HTML, CSS, Tailwind CSS",
-  "Accounting, Finance, Business Management",
+  "Adobe Photoshop CC 2019, Adobe Premiere Pro, CorelDRAW",
+  "Unreal Engine 5, Audodesk Maya"
 ];
 
 // --- COMPONENT ---
 const BodySection = () => (
-  <section className="max-w-7xl mx-auto my-6 px-4 sm:px-6 lg:px-8">
-    <div className="w-full mx-auto">
+  <section className="2xl:container mx-auto my-6 px-4 sm:px-6 lg:px-8">
+    <div className="w-[w-90%] mx-auto">
       {/* 2-column grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
         {/* LEFT COLUMN: Experience + Skills (stacked vertically) */}
@@ -106,7 +107,7 @@ const BodySection = () => (
 
         {/* RIGHT COLUMN: Education fills full right space */}
         <div className="bg-gray-900/90 dark:bg-gray-800 rounded-2xl shadow p-6">
-          <h2 className="text-2xl md:text-3xl font-bold text-pink-400 mb-4">Education</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-violet-600 mb-4">Education</h2>
           <div className="space-y-6">
             {education.map((edu) => (
               <div

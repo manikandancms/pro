@@ -3,7 +3,8 @@ import React, { useRef, useState } from "react";
 const Form = () => {
   const formRef = useRef(null);
   const [success, setSuccess] = useState(false);
-  const [error, setError] = useState(""); // For validation or submission errors
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false); // For showing submission is in progress
 
   const validateForm = (formData) => {
     const name = formData.get("Name")?.trim();
@@ -15,7 +16,8 @@ const Form = () => {
       return false;
     }
 
-    const emailRegex = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
+    const emailRegex =
+      /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
     if (!email || !emailRegex.test(email)) {
       setError("Please enter a valid email address.");
       return false;
@@ -26,43 +28,51 @@ const Form = () => {
       return false;
     }
 
-    setError(""); // Clear error if validation passed
+    setError("");
     return true;
   };
 
-  const submit = (e) => {
+  const submit = async (e) => {
     e.preventDefault();
+
+    if (loading) return; // Prevent double submission
 
     const formElement = formRef.current;
     const formDataToSend = new FormData(formElement);
 
     if (!validateForm(formDataToSend)) return;
 
-    fetch(
-      "https://script.google.com/macros/s/AKfycbyZejRw-Ms6bX9-RJs6t1Qq4mRXTYWz6A_JQG1Vsjb51fzW0I2HtYXJsMWDlKy0RIlr/exec",
-      {
-        method: "POST",
-        body: formDataToSend,
-      }
-    )
-      .then((response) => {
-        if (response.ok) {
-          setSuccess(true);
-          setError(""); // clear any previous errors
-          formElement.reset();
-          setTimeout(() => setSuccess(false), 4000);
-        } else {
-          setError("Failed to submit form.");
+    setLoading(true); // Start loading indicator
+    setError("");
+    setSuccess(false);
+
+    try {
+      const response = await fetch(
+        "https://script.google.com/macros/s/AKfycbyZejRw-Ms6bX9-RJs6t1Qq4mRXTYWz6A_JQG1Vsjb51fzW0I2HtYXJsMWDlKy0RIlr/exec",
+        {
+          method: "POST",
+          body: formDataToSend,
         }
-      })
-      .catch(() => {
-        setError("Error submitting form, please try again.");
-      });
+      );
+
+      if (response.ok) {
+        setSuccess(true);
+        formElement.reset();
+        setTimeout(() => setSuccess(false), 4000);
+      } else {
+        setError("Failed to submit form.");
+      }
+    } catch {
+      setError("Error submitting form, please try again.");
+    } finally {
+      setLoading(false); // End loading indicator
+    }
   };
 
   return (
-    <div className="max-w-md mx-auto mt-16 p-6  font-sans mb-8 ">
-      <h1 className="text-3xl font-bold text-center mb-8 text-gray-600">
+    <div className="max-w-2xl mx-auto mt-16 p-6 font-sans mb-8">
+      <div>
+        <h1 className="text-3xl font-bold text-center mb-8 text-gray-600">
         Share Your Thoughts 💭
       </h1>
       <form ref={formRef} onSubmit={submit} className="flex flex-col">
@@ -76,6 +86,7 @@ const Form = () => {
           placeholder="Enter your name"
           className="mb-6 px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-indigo-500 transition"
           required
+          disabled={loading}
         />
         <label htmlFor="Email" className="mb-2 font-medium text-gray-700">
           Email
@@ -87,6 +98,7 @@ const Form = () => {
           placeholder="Enter your email"
           className="mb-6 px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-indigo-500 transition"
           required
+          disabled={loading}
         />
         <label htmlFor="Message" className="mb-2 font-medium text-gray-700">
           Message
@@ -98,26 +110,31 @@ const Form = () => {
           rows={4}
           className="mb-6 px-4 py-2 border border-gray-300 rounded resize-y focus:outline-none focus:ring-2 focus:ring-indigo-500 transition"
           required
+          disabled={loading}
         />
         <button
           type="submit"
-          className="bg-indigo-600 text-white font-semibold py-3 px-4 rounded hover:bg-indigo-700 transition"
+          disabled={loading}
+          className={`${
+            loading ? "bg-indigo-400 cursor-not-allowed" : "bg-indigo-600 hover:bg-indigo-700"
+          } text-white font-semibold py-3 px-4 rounded transition`}
         >
-          Submit
+          {loading ? "Sending..." : "Submit"}
         </button>
-        {/* Success message just under the button */}
         {success && (
           <div className="mt-4 text-green-600 text-center font-semibold text-lg">
             Successfully sent your Message
           </div>
         )}
-        {/* Validation or submission error message */}
         {error && (
           <div className="mt-4 text-red-600 text-center font-semibold text-lg">
             {error}
           </div>
         )}
       </form>
+
+      </div>
+      
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-// Profile photo URL (replace with your own image path or URL)
+// Profile photo URL
 const profilePhoto = "https://ik.imagekit.io/jap5d6wbb/image/DHA_7805_000000001_.jpg?updatedAt=1754241378589";
 
 const aboutMeText = `Hello! I'm a passionate MERN stack developer and 3D animator with experience 
@@ -17,23 +17,31 @@ const animationVariants = {
 const About = () => {
   return (
     <motion.section
-      className="max-w-3xl mx-auto text-gray-900 p-8 shadow-lg mt-10 mb-10"
+      className="max-w-3xl mx-auto p-6 shadow-lg mt-10 mb-10 bg-white rounded"
       variants={animationVariants}
       initial="hidden"
       animate="visible"
       transition={{ duration: 0.8, ease: "easeOut" }}
     >
-      <h2 className="text-3xl font-bold text-gray-900 text-center mb-8">About Me</h2>
-      <div className="flex flex-row items-center">
-        <p className="text-md leading-relaxed whitespace-pre-line flex-1 mr-6">
+     
+      <div className="2xl:container mx-auto">
+        <div className="w-[90%] mx-auto"> 
+           <h2 className="text-3xl font-bold text-center text-gray-900 mb-8">About Me</h2>
+           <div className="flex flex-col md:flex-row items-center md:items-start">
+        <p className="text-md leading-relaxed whitespace-pre-line flex-1 mb-6 md:mb-0 md:mr-8 text-gray-800">
           {aboutMeText}
         </p>
+        {/* Profile photo only visible on small/medium and up */}
         <img
           src={profilePhoto}
           alt="Profile"
-          className="w-48 h-48 object-cover shadow-md border border-gray-500 rounded"
+          className="hidden sm:block w-40 h-40 sm:w-48 sm:h-48 object-cover shadow-md border border-gray-500 rounded-full"
         />
       </div>
+
+        </div>
+      </div>
+     
     </motion.section>
   );
 };

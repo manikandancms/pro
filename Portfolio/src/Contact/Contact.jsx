@@ -23,11 +23,13 @@ const ContactMe = () => {
   const githubId = github.split("github.com/")[1] || github;
 
   return (
-    <div className="font-sans max-w-3xl mx-auto p-4">
+    
+    
+    <div className="font-sans 2xl:container mx-auto p-4">
       {/* Contact Info Section */}
       <section
         id="contact"
-        className="bg-gray-900 text-gray-100 p-8 rounded-xl shadow-lg mb-8"
+        className=" w-[90%] mx-auto bg-gray-900 text-gray-100 p-8 rounded-xl shadow-lg mb-8"
       >
         <h2 className="text-center text-3xl mb-6 font-semibold">Contact Me</h2>
         <ul className="list-none p-0 mb-8 text-lg space-y-4">
@@ -35,7 +37,7 @@ const ContactMe = () => {
             <strong>Email: </strong>
             <a
               href={`mailto:${email}`}
-              className="text-cyan-400 hover:underline break-all"
+              className="text-white hover:underline break-all"
             >
               {email}
             </a>

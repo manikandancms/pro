@@ -2,11 +2,19 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#151515] text-[#efefef] py-8 text-center">
-      <div className="2xl:container  mx-auto">
-        <div className="w-[90%] mx-auto">
-          <span className="font-bold">Manikandan.C</span> &copy; {new Date().getFullYear()}
+    <div className="2xl:container  mx-auto bg-[#151515] text-[#efefef] py-8 text-center">
+      <div className="w-[90%] mx-auto ">
+       
+        <div className=" mb-1">
+          <span>
+            All Right Reserved by C.Manikandan  &copy; {new Date().getFullYear()}
+          </span>
         </div>
+         <div className=" mb-1">
+          <span>
+            Contact: 91+ 6381195298
+          </span>
+        </div >
         <div className="mt-3">
           <a
             href="https://github.com/manikandancms"
@@ -26,8 +34,10 @@ const Footer = () => {
           </a>
         </div>
       </div>
-    </footer>
+    </div>
   );
 };
 
 export default Footer;
+
+

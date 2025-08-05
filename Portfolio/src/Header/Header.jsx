@@ -1,27 +1,49 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import ShimmerLayout from "../shimmer/Shimmer";
+; // Adjust path as needed
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [loading, setLoading] = useState(true);
+
+  // Simulate loading for 2 seconds (replace with your actual logic)
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 2000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) {
+    // Show shimmer loading placeholder while loading
+    return <ShimmerLayout />;
+  }
 
   return (
-    <header className="2xl:container mx-auto bg-gray-800 text-white px-4 py-4 sticky top-0 z-50 shadow-md">
-      <div className=" w-[95%] mx-auto flex items-center justify-between ">
+    <header className="2xl:container mx-auto bg-gray-800 text-white p-4 z-50 shadow-md">
+      <div className="w-[90%] mx-auto flex items-center justify-between">
         {/* Logo / Brand */}
-        <div className="text-2xl font-bold">
-          Portfolio
-        </div>
+        <div className="text-2xl font-semibold">Portfolio application</div>
 
         {/* Desktop navigation */}
-        <nav className="hidden md:flex space-x-8 font-medium">
-          <Link to="/" className="hover:underline hover:text-green-400 transition-colors duration-200">
+        <nav className="hidden md:flex space-x-10 font-medium">
+          <Link
+            to="/"
+            className="hover:underline hover:text-gray-400 transition-colors duration-200"
+          >
             Home
           </Link>
-          <Link to="/about" className="hover:underline hover:text-green-400 transition-colors duration-200">
-            About
-          </Link>
-          <Link to="/contact" className="hover:underline hover:text-green-400 transition-colors duration-200">
+          <Link
+            to="/contact"
+            className="hover:underline hover:text-gray-400 transition-colors duration-200"
+          >
             Contact
+          </Link>
+       
+          <Link
+            to="/about"
+            className="hover:underline hover:text-gray-400 transition-colors duration-200"
+          >
+            About
           </Link>
         </nav>
 
@@ -68,18 +90,21 @@ const Header = () => {
             Home
           </Link>
           <Link
-            to="/about"
-            className="hover:underline hover:text-green-400 transition-colors duration-200"
-            onClick={() => setMenuOpen(false)}
-          >
-            About
-          </Link>
-          <Link
             to="/contact"
             className="hover:underline hover:text-green-400 transition-colors duration-200"
             onClick={() => setMenuOpen(false)}
           >
             Contact
+          </Link>
+         
+
+
+          <Link
+            to="/about"
+            className="hover:underline hover:text-green-400 transition-colors duration-200"
+            onClick={() => setMenuOpen(false)}
+          >
+            About
           </Link>
         </nav>
       )}
