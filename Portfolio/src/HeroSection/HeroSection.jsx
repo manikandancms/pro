@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 
 const HeroSection = () => {
   return (
-    <section className="min-h-screen flex flex-col justify-center items-center px-4 sm:px-6 py-6 text-white bg-white">
-      <div className="flex flex-col-reverse lg:flex-row items-center w-full max-w-6xl mx-auto space-y-6 lg:space-y-0 lg:space-x-8">
+    <section className=" 2xl:container mx-auto flex flex-col justify-center items-center px-4 sm:px-6 py-6 text-white bg-white">
+      <div className=" w-[95%] mx-auto flex flex-col-reverse lg:flex-row items-center  max-w-6xl  space-y-6 lg:space-y-0 lg:space-x-8">
         {/* Text content */}
         <div className="flex-1 flex flex-col items-center text-center lg:items-center lg:text-center space-y-4">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-700 leading-tight">
@@ -18,7 +18,7 @@ const HeroSection = () => {
           </h2>
           <div className="w-full flex justify-center lg:justify-center mt-4">
             <a
-              href="https://drive.google.com/drive/folders/1fsb6J9-m45sqBtHQGfQZDSqBWZsP6Yze"
+              href="https://drive.google.com/file/d/1oHkHverhzdaxH_9wiDuXDSopHQf3EyV1/view?usp=sharing"
               className="bg-green-600 hover:bg-green-800 text-white font-semibold py-2 px-6 rounded border border-gray-800 transition-transform transform hover:scale-105"
             >
               Resume

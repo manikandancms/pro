@@ -108,7 +108,7 @@ const ContactMe = () => {
             <div className="text-xs text-gray-600">PDF • 1 page</div>
           </div>
           <a
-            href={"https://drive.google.com/drive/folders/1fsb6J9-m45sqBtHQGfQZDSqBWZsP6Yze"}
+            href={"https://drive.google.com/file/d/1oHkHverhzdaxH_9wiDuXDSopHQf3EyV1/view?usp=sharing"}
             target="_blank"
             rel="noopener noreferrer"
             className="bg-blue-600 text-white px-3 py-1 rounded-md font-medium text-sm mr-2 hover:bg-blue-700 transition"
