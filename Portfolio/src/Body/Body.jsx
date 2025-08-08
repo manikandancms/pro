@@ -14,26 +14,8 @@ const experience = [
 ];
 
 const education = [
-  {
-    degree: "B.Com (Bachelor of Commerce)",
-    institution: "Swami Vivekananda Arts and Science College",
-    year: "2017",
-    grade: "First Class",
-    logo: "https://ik.imagekit.io/jap5d6wbb/image/swa@3x.jpg?updatedAt=1753730819620",
-    details: "Completed undergraduate studies in Commerce at Swami Vivekananda Arts and Science College, affiliated to Thiruvalluvar University, building a solid foundation in accounting and business management.",
-    area: "laxmipuram, Villupuram, Tamil Nadu",
-    mode: "Offline",
-  },
-  {
-    degree: "M.Com (Master of Commerce)",
-    institution: "Sri Aravindar Arts and Science College",
-    year: "2023",
-    grade: "Distinction (82%)",
-    logo: "https://ik.imagekit.io/jap5d6wbb/image/arav.jpeg?updatedAt=1754116083792",
-    details: "Postgraduate coursework focused on advanced accounting, finance, and research. Gained valuable experience through research, internships, and projects.",
-    area: "Sedarapet, Villupuram, Tamil Nadu",
-    mode: "Offline",
-  },
+
+ 
   {
     degree: "MERN Stack Developer Certificate",
     institution: "Revamp Acadamy",
@@ -44,6 +26,26 @@ const education = [
     area: "Madurai, Tamil Nadu",
     mode: "Online",
   },
+   {
+    degree: "M.Com (Master of Commerce)",
+    institution: "Sri Aravindar Arts and Science College",
+    year: "2023",
+    grade: "First Class",
+    logo: "https://ik.imagekit.io/jap5d6wbb/image/arav.jpeg?updatedAt=1754116083792",
+    details: "Postgraduate coursework focused on advanced accounting, finance, and research. Gained valuable experience through research, internships, and projects.",
+    area: "Sedarapet, Villupuram, Tamil Nadu",
+    mode: "Regular",
+  },
+    {
+    degree: "B.Com (Bachelor of Commerce)",
+    institution: "Swami Vivekananda Arts and Science College",
+    year: "2017",
+    grade: "First Class",
+    logo: "https://ik.imagekit.io/jap5d6wbb/image/swa@3x.jpg?updatedAt=1753730819620",
+    details: "Completed undergraduate studies in Commerce at Swami Vivekananda Arts and Science College, affiliated to Thiruvalluvar University, building a solid foundation in accounting and business management.",
+    area: "laxmipuram, Villupuram, Tamil Nadu",
+    mode: "Regular",
+  }
 ];
 
 const skills = [

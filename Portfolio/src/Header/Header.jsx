@@ -21,7 +21,7 @@ const Header = () => {
     <header className="2xl:container mx-auto bg-gray-800 text-white p-4 z-50 shadow-md fixed top-0 left-0 right-0">
       <div className="w-[90%] mx-auto flex items-center justify-between">
         {/* Logo / Brand */}
-        <div className="text-2xl font-semibold">Portfolio application</div>
+        <div className="text-2xl font-semibold">C. Manikandan</div>
 
         {/* Desktop navigation */}
         <nav className="hidden md:flex space-x-10 font-medium">
