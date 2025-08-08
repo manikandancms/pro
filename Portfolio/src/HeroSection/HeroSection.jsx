@@ -18,7 +18,7 @@ const HeroSection = () => {
           </h2>
           <div className="w-full flex justify-center lg:justify-center mt-4">
             <a
-              href="https://drive.google.com/file/d/1oHkHverhzdaxH_9wiDuXDSopHQf3EyV1/view?usp=sharing"
+              href="https://drive.google.com/file/d/10jbjhQwftKW-fTGtZr4mI4KWa7dZqNuN/view?usp=sharing"
               className="bg-green-600 hover:bg-green-800 text-white font-semibold py-2 px-6 rounded border border-gray-800 transition-transform transform hover:scale-105"
             >
               Resume
