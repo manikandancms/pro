@@ -23,8 +23,8 @@ const ContactMe = () => {
   const githubId = github.split("github.com/")[1] || github;
 
   return (
-    
-    
+
+
     <div className="font-sans 2xl:container mx-auto p-4">
       {/* Contact Info Section */}
       <section
@@ -110,14 +110,14 @@ const ContactMe = () => {
             <div className="text-xs text-gray-600">PDF • 1 page</div>
           </div>
           <a
-            href={"https://drive.google.com/file/d/1HdIP1fgfKEjjiaq4qVW2K_QU9vqSJ1E4/view?usp=sharing"}
+            href={"https://drive.google.com/file/d/1r9a0crV2q2JQeGMiGwx6jehEgEmZEb4P/view?usp=sharing"}
             target="_blank"
             rel="noopener noreferrer"
             className="bg-blue-600 text-white px-3 py-1 rounded-md font-medium text-sm mr-2 hover:bg-blue-700 transition"
           >
             Preview
           </a>
-         
+
         </div>
       </section>
     </div>

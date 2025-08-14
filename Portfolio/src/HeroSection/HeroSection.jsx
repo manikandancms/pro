@@ -14,11 +14,11 @@ const HeroSection = () => {
             className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-600"
             style={{ animation: "bounce 2s infinite alternate" }}
           >
-            Full Stack Developer
+            Full Stack Web Developer
           </h2>
           <div className="w-full flex justify-center lg:justify-center mt-4">
             <a
-              href="https://drive.google.com/file/d/1HdIP1fgfKEjjiaq4qVW2K_QU9vqSJ1E4/view?usp=sharing"
+              href="https://drive.google.com/file/d/1r9a0crV2q2JQeGMiGwx6jehEgEmZEb4P/view?usp=sharing"
               className="bg-green-600 hover:bg-green-800 text-white font-semibold py-2 px-6 rounded border border-gray-800 transition-transform transform hover:scale-105"
             >
               Resume
