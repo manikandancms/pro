@@ -81,7 +81,7 @@ const App = () => {
     return (
         <main className="max-2xl: mx-auto flex flex-col items-center justify-center min-h-screen bg-gray-100">
             <div className=" w-[90%] mx-autp bg-white shadow-md  rounded-lg p-6 ">
-                <h1 className="font-semibold text-2xl text-center text-slate-800 mb-5">Do-To list</h1>
+                <h1 className="font-semibold text-2xl text-center text-slate-800 mb-5">To-Do list</h1>
                 <div className="flex items-center gap-2 mb-5">
                     <input type="text" placeholder="Add new items..." className="border border-gray-600"
                         value={newitem}
