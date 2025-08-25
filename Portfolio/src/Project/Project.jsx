@@ -7,6 +7,11 @@ const projects = [
     link: "https://pro-e-com.netlify.app/"
   },
   {
+    title: "To-Do List",
+    link: "https://todolistpro-demo.netlify.app/"
+  },
+
+  {
     title: "Counter",
     link: "https://submission-he3z.vercel.app/"
   },
