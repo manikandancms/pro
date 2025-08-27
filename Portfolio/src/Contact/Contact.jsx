@@ -1,5 +1,6 @@
 import React from "react";
 
+
 const contactInfo = {
   email: "cmanikandan23496@gmail.com",
   mobile: "+91-6381195298",
@@ -7,6 +8,7 @@ const contactInfo = {
   github: "https://github.com/manikandancms",
   resumeUrl: "/resume.pdf", // Put your resume in public folder
   resumeFileName: "Resume",
+
 };
 
 const ContactMe = () => {
@@ -34,6 +36,7 @@ const ContactMe = () => {
         <h2 className="text-center text-3xl mb-6 font-semibold">Contact Me</h2>
         <ul className="list-none p-0 mb-8 text-lg space-y-4">
           <li>
+
             <strong>Email: </strong>
             <a
               href={`mailto:${email}`}

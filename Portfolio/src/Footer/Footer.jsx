@@ -1,18 +1,19 @@
 import React from "react";
+import { FaMobileRetro } from "react-icons/fa6";
 
 const Footer = () => {
   return (
     <div className="2xl:container  mx-auto bg-[#151515] text-[#efefef] py-10 text-center">
       <div className="w-[90%] mx-auto ">
-       
+
         <div className=" mb-1">
           <span>
             All Right Reserved by C.Manikandan  &copy; {new Date().getFullYear()}
           </span>
         </div>
-         <div className=" mb-1">
+        <div className=" mb-1">
           <span>
-            Contact: 91+ 6381195298
+            Contact : +91 6381195298
           </span>
         </div >
         <div className="mt-3">
