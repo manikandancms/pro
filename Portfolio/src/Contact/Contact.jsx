@@ -113,7 +113,7 @@ const ContactMe = () => {
             <div className="text-xs text-gray-600">PDF • 1 page</div>
           </div>
           <a
-            href={"https://drive.google.com/file/d/1iefgD14wpTpDOL9ybLJauvzjCfKsVOyN/view?usp=sharing"}
+            href={"https://drive.google.com/file/d/1u9uHtpEJyDAFRRWT8MNiClv89_ORRv6T/view?usp=sharing"}
             target="_blank"
             rel="noopener noreferrer"
             className="bg-blue-600 text-white px-3 py-1 rounded-md font-medium text-sm mr-2 hover:bg-blue-700 transition"
