@@ -1,5 +1,6 @@
 import React from "react";
-import { FaMobileRetro } from "react-icons/fa6";
+
+
 
 const Footer = () => {
   return (
@@ -8,6 +9,7 @@ const Footer = () => {
 
         <div className=" mb-1">
           <span>
+
             All Right Reserved by C.Manikandan  &copy; {new Date().getFullYear()}
           </span>
         </div>

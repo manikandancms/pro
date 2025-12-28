@@ -1,5 +1,6 @@
 import React from "react";
 
+
 // --- DATA ARRAYS (MUST be present!) ---
 const experience = [
   {
@@ -15,18 +16,9 @@ const experience = [
 
 const education = [
 
- 
+
+
   {
-    degree: "MERN Stack Developer Certificate",
-    institution: "Revamp Acadamy",
-    year: "2025",
-    grade: "Certified",
-    logo: "https://ik.imagekit.io/jap5d6wbb/image/download.png?updatedAt=1753730977043",
-    details: "Hands-on training on MongoDB, Express, React, and Node.js, focusing on building full-stack web applications with industry-best practices.",
-    area: "Madurai, Tamil Nadu",
-    mode: "Online",
-  },
-   {
     degree: "M.Com (Master of Commerce)",
     institution: "Sri Aravindar Arts and Science College",
     year: "2023",
@@ -36,7 +28,7 @@ const education = [
     area: "Sedarapet, Villupuram, Tamil Nadu",
     mode: "Regular",
   },
-    {
+  {
     degree: "B.Com (Bachelor of Commerce)",
     institution: "Swami Vivekananda Arts and Science College",
     year: "2017",
@@ -136,7 +128,7 @@ const BodySection = () => (
                       <span className="font-semibold">Area:</span> {edu.area}
                     </span>
                     <span className="ml-4">
-                      <span className="font-semibold">Mode:</span> {edu.mode}
+                      <span className="font-semibold">Mode:</span>  {edu.mode}
                     </span>
                   </div>
                 </div>
